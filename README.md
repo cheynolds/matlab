@@ -1,2 +1,2 @@
 # matlab
-a collection of useful matlab scripts for engineers, physicists and curious students
+A collection of useful matlab references, examples and scripts for engineers, physicists and curious students.

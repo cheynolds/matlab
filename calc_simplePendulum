@@ -1,0 +1,40 @@
+%%EGEME 205 - Practice Problem1
+%%Author: Chris Reynolds
+%This script simulates and visualizes the motion of a simple pendulum
+%while providing the calculation of the period of the oscillation.
+
+clc;clear;
+
+disp("Welcome to the pendulum simulator v0.001");
+
+%get user input values
+theta = input("\n\nPlease enter the initial angular displacement (radians): ");
+length = input("Please enter the length of the pendulum (meters): ");
+time = input("Please enter the time to simulate (seconds): ");
+
+%call pendulum motion function, pass collected input values
+period = pendulum_motion(theta,length,time);
+%print the calculated period to the user
+fprintf("The period of motion for your pendulum is T = %.2g\n");
+
+
+function [period] = pendulum_motion(theta,length,time)
+%this function receives the nessesary values to calculate and plot the
+%simulated motion of a pendulum.
+
+%gravity constant
+gValue = 9.81;
+
+%%calculate period
+%simplify equation
+omega_0Value = sqrt(gValue/length);
+%calculate Period
+T = 2*pi/omega_0Value;
+%declare time vector, use user input for setting ceiling
+timeVec = linspace(0,time,100);
+
+%calculate the angular displacement against the timeVec
+theta_t = theta * cos((omega_0Value).*timeVec);
+%plot theta_t for the vector array timeVec
+plot(timeVec,theta_t)
+end

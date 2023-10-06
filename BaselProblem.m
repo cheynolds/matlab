@@ -21,8 +21,9 @@ n = input("How many decimal places of the Basel problem to find (caution 6+): \n
       while 1
             
         calcValue = calcValue + (1/i^2);
-        
-            if round(calcValue,n) == round(piValue,n)
+        fprintf("%.12f TERM %d\n",round(calcValue,n+4),i);
+        fprintf("%.12f PI^2/6\n",piValue);
+            if round(calcValue,n) >= round(piValue,n)
                 break
             else
                 i = i + 1;
@@ -30,7 +31,8 @@ n = input("How many decimal places of the Basel problem to find (caution 6+): \n
         end
 
      fprintf("To verify the Basel problem to %d digits requires %d terms.\n", n, i)
-     fprintf("Compare %.12f [(pi^2)/6)] to %.12f [SUM 1/(x^2)]",piValue,calcValue  )
+     fprintf("Compare %.12f [(pi^2)/6)] to %.12f [SUM 1/(x^2)]",piValue,round(calcValue,n)  )
+
 
 %% SAMPLE OUTPUT 
 %

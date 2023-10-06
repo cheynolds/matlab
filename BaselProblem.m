@@ -34,4 +34,4 @@ n = input("How many decimal places of the Basel problem to find (caution 6+): \n
 %% SAMPLE OUTPUT 
 %
 % To verify the Basel problem to 7 digits requires 59622476 terms.
-% Compare 1.644934066848 [(pi^2)/6)] to 1.644934050000 [SUM 1/(x^2)]
+% Compare 1.644934050000 [(pi^2)/6)] to 1.644934066848 [SUM 1/(x^2)]
